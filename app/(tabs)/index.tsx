@@ -4,10 +4,8 @@ import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      {/* Title */}
       <Text style={styles.title}>Task List</Text>
 
-      {/* Input field (only visual, editable) */}
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
@@ -16,7 +14,6 @@ export default function HomeScreen() {
         <Button title="Add" onPress={() => {}} /> 
       </View>
 
-      {/* Task list */}
       <View style={styles.taskList}>
         <Text style={styles.task}> Task 1: Study  </Text>
         <Text style={styles.task}> Task 2: Create the task list</Text>
