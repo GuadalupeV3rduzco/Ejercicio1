@@ -1,15 +1,28 @@
 import React from 'react';
-import { View, Text, Button, Alert, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Mi primera app con React Native</Text>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Presióname"
-          onPress={() => Alert.alert("BOOOM")}
+      {/* Title */}
+      <Text style={styles.title}>Task List</Text>
+
+      {/* Input field (only visual, editable) */}
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.input}
+          placeholder="Write a task..."
         />
+        <Button title="Add" onPress={() => {}} /> 
+      </View>
+
+      {/* Task list */}
+      <View style={styles.taskList}>
+        <Text style={styles.task}> Task 1: Study  </Text>
+        <Text style={styles.task}> Task 2: Create the task list</Text>
+        <Text style={styles.task}> Task 3: Upload project to GitHub</Text>
+        <Text style={styles.task}> Task 4: Valorant</Text>
+        <Text style={styles.task}> Task 5: Sleep notes</Text>
       </View>
     </View>
   );
@@ -18,18 +31,39 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff', 
-    paddingTop: 50,             
-    alignItems: 'center',      
+    backgroundColor: '#ffffff',
+    paddingTop: 50,
+    paddingHorizontal: 20,
   },
   title: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 20,
   },
-  buttonContainer: {
+  inputContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  input: {
     flex: 1,
-    justifyContent: 'center',  
-    width: '100%',
-    paddingHorizontal: 50
-  }
+    borderWidth: 1,
+    borderColor: '#cccccc',
+    padding: 10,
+    borderRadius: 8,
+    marginRight: 10,
+    backgroundColor: '#f9f9f9',
+  },
+  taskList: {
+    marginTop: 10,
+  },
+  task: {
+    fontSize: 16,
+    padding: 12,
+    backgroundColor: '#f2f2f2',
+    marginVertical: 6,
+    borderRadius: 8,
+  },
 });
